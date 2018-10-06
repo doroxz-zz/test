@@ -1,0 +1,81 @@
+# Pull Requests for GitHub repository settings https://github.com/apps/settings
+repository:
+  description: repository template for github
+  homepage: https://linterhub.com
+  has_issues: true
+  has_wiki: false
+  has_downloads: false
+  default_branch: develop
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+
+labels:
+  - name: "Priority/high"
+    color: FF0000
+  - name: "Priority/medium"
+    color: FF8080
+  - name: "priority/low"
+    color: FFE6E6
+  - name: "type/bug"
+    color: 0000FF
+  - name: "type/feature"
+    color: 4040FF
+  - name: "type/maintenance"
+    color: 8080FF
+  - name: "type/question"
+    color: BFBFFF
+  - name: "type/ci"
+    color: BFBFFF
+  - name: "type/documentation"
+    color: E6E6FF
+  - name: "type/refactoring"
+    color: D9D9FF
+  - name: "type/test"
+    color: 8080FF
+  - name: "status/available"
+    color: 60BF60
+  - name: "status/blocked"
+    color: 008000
+  - name: "status/doing"
+    color: 60BF60
+  - name: "status/holded"
+    color: A8E0A8
+  - name: "status/pending"
+    color: 0E8C0E
+  - name: "status/rejected"
+    color: DAF2DA
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 2
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        dismissal_restrictions:
+          users: []
+          teams: []
+      required_status_checks:
+        strict: true
+        contexts: [ "ci/travis", "commitlint" ]
+      enforce_admins: true
+      restrictions:
+        users: []
+        teams: []
+  - name: develop
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: false
+        dismissal_restrictions:
+          users: [ "doroxz", "xferra"]
+          teams: [ "maintainers" ]
+      required_status_checks:
+        strict: false
+        contexts: [ "ci/travis", "commitlint" ]
+      enforce_admins: false
+      restrictions:
+        users: []
+        teams: [ "maintainers" ]
