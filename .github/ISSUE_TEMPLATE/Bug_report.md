@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Let us know about the problem
+about: Let us know about the problem!
 
 ---
 
@@ -22,7 +22,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Environment (please complete the following information):**
  - OS: [e.g. darwin]
- - Project version [e.g. 1.0.0] or latest commit ref [just paste here SHA-1]
+ - Project version [e.g. 1.0.0] or latest commit reference [just paste SHA-1]
 
 **Additional context**
 Add any other context about the problem here. Maybe you have any ideas how to fix this :)
