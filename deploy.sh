@@ -8,5 +8,5 @@ if [ -n "$GITHUB_TOKEN" ]; then
     url="${proto}doroxz:${GITHUB_TOKEN}@${url_parsed}"
     git checkout master
     git pull origin
-    git push -f $url develop
+    git push -f $url HEAD:develop
 fi
