@@ -5,11 +5,14 @@ install: npm install
 
 jobs:
   include:
-    - stage: build
-      node_js: 8
-      script:
-        - node index.js
+    #- stage: build
+    #  node_js: 8
+    #  script:
+    #    - node index.js
     - stage: release
       node_js: 8
       if: branch = master AND type = push
-      script: deploy.sh
+      script: 
+        - cd $TRAVIS_BUILD_DIR
+        - chmod +x deploy.sh
+        - ./deploy.sh
