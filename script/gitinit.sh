@@ -5,5 +5,5 @@ if [ -n $GITHUB_TOKEN ]; then
         curl -H -q "Authorization: token ${GITHUB_TOKEN}" ${GITHUB_URL} &>/dev/null
     fi
     PROTO="$(echo $GITHUB_URL | grep :// | sed -e's,^\(.*://\).*,\1,g')";
-    echo "${PROTO}$GITHUB_USER:$GITHUB_TOKEN@$(echo ${GITHUB_URL/$PROTO/})"
+    echo "${PROTO}${GITHUB_USER}:${GITHUB_TOKEN}@${GITHUB_URL/$PROTO/}"
 fi
