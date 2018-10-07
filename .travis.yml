@@ -1,0 +1,16 @@
+dist: trusty
+sudo: false
+language: nodejs
+node_js: 8
+install: npm install
+
+jobs:
+  include:
+    - stage: build
+    ode_js: 8
+      script:
+        - node index.js
+    - stage: release
+      node_js: 8
+      if: branch = master AND type = push
+      script: deploy.sh
